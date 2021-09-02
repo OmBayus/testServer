@@ -38,4 +38,10 @@ app.post("/delete",(req,res)=>{
       })
 })
 
-app.listen(4000)
+app.get("/", (req, res) => {
+	res.send("App Is Working")
+})
+const port = process.env.PORT || 80
+app.listen(port, () => {
+    console.log("Server running on " + port)
+})
