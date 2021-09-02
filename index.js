@@ -13,6 +13,8 @@ app.use(express.json())
 
 app.use(cors())
 
+app.use(express.static('build'))
+
 app.get("/",(req,res)=>{
     Person.find({}, function (err, data) {
         res.json(data)
@@ -33,7 +35,7 @@ app.post("/delete",(req,res)=>{
         if (err) {
           console.log(err);
         }else {
-          req.json("success")
+          res.json("success")
         }
       })
 })
