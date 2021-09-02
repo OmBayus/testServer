@@ -11,4 +11,9 @@ RUN apt get npm -y
 RUN npm install -g nodemon
 RUN npm install
 
-ENTRYPOINT ["/bin/sh", "-c" , "mongod & && npm start"]
+RUN touch commands.sh
+RUN echo "mongod &" >> commands.sh
+RUN echo "npm start" >> commands.sh
+RUN chmod 777 commands.sh
+
+ENTRYPOINT ["./commands.sh"]
