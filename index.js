@@ -27,4 +27,15 @@ app.post("/add",(req,res)=>{
     
 })
 
+
+app.post("/delete",(req,res)=>{
+    Fruit.deleteOne({_id:req.id},function(err){
+        if (err) {
+          console.log(err);
+        }else {
+          req.json("success")
+        }
+      })
+})
+
 app.listen(4000)
