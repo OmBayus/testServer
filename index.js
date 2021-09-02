@@ -15,7 +15,7 @@ app.use(cors())
 
 app.use(express.static('build'))
 
-app.get("/",(req,res)=>{
+app.get("/getall",(req,res)=>{
     Person.find({}, function (err, data) {
         res.json(data)
     });
@@ -31,7 +31,7 @@ app.post("/add",(req,res)=>{
 
 
 app.post("/delete",(req,res)=>{
-    Person.deleteOne({_id:req.id},function(err){
+    Person.deleteOne({_id:req.body.id},function(err){
         if (err) {
           console.log(err);
         }else {
@@ -40,7 +40,7 @@ app.post("/delete",(req,res)=>{
       })
 })
 
-app.get("/", (req, res) => {
+app.get("/isworking", (req, res) => {
 	res.send("App Is Working")
 })
 const port = process.env.PORT || 80
