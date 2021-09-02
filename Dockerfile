@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 COPY . .
 RUN apt-get update -y
 RUN apt install nodejs -y
-RUN apt get npm -y
+RUN apt install npm -y
 RUN npm install -g nodemon
 RUN npm install
 
