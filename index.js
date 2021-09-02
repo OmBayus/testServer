@@ -29,11 +29,11 @@ app.post("/add",(req,res)=>{
 
 
 app.post("/delete",(req,res)=>{
-    Person.deleteOne({_id:req.id},function(err){
+    Person.deleteOne({_id:req.body.id},function(err){
         if (err) {
           console.log(err);
         }else {
-          req.json("success")
+          res.json("success")
         }
       })
 })
