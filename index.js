@@ -41,7 +41,7 @@ app.post("/delete",(req,res)=>{
 })
 
 app.get("/isworking", (req, res) => {
-	res.send("App Is Working")
+	res.send("App Is Workingg")
 })
 const port = process.env.PORT || 80
 app.listen(port, () => {
